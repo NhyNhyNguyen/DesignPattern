@@ -1,4 +1,4 @@
-package com.company.session_2;
+package com.company.section_2;
 
 import java.util.ArrayList;
 import java.util.List;

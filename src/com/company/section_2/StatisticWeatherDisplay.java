@@ -1,26 +1,26 @@
-package com.company.session_2;
+package com.company.section_2;
 
 /**
  * Created by nhinty5 on 9/5/2021.
  */
-public class CurrentConditionDisplay implements Observer, Display{
+public class StatisticWeatherDisplay implements Observer, Display{
     private int temperature;
-    private int humidity;
+    private int pressure;
 
     private WeatherData weatherData;
 
-    public CurrentConditionDisplay(WeatherData weatherData) {
+    public StatisticWeatherDisplay(WeatherData weatherData) {
         this.weatherData = weatherData;
     }
 
     @Override
     public void display() {
-        System.out.println(this.getClass().getName() + ": temperature = " + this.temperature + " humidity: " + this.humidity);
+        System.out.println(this.getClass().getName() + ": temperature = " + this.temperature + " pressure = " + this.pressure);
     }
 
     @Override
     public void update() {
-        this.humidity = weatherData.getHumidity();
+        this.pressure = weatherData.getPressure();
         this.temperature = this.weatherData.getTemperature();
         display();
     }
